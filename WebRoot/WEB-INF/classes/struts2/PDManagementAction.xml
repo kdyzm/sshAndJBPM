@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+  <!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+"file:\\\D:\程序\java\struts2\dtd\struts-2.3.dtd">
+<struts>
+	<package name="pdManagementPackage" extends="struts-default" namespace="/">
+		<action name="PDManagementAction_*" class="com.kdyzm.struts2.action.PDManagementAction" method="{1}">
+			<result name="toIndexAction" type="redirectAction">
+				<param name="actionName">ApproveAction_toIndex.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<!-- 类型为stream，由流拦截器来处理后续事项，result标签中没有内容 -->
+			<result name="stream" type="stream"></result>
+			<result name="showImage">/approvalProcessManagement/showImageUI.jsp</result>
+		</action>
+	</package>
+</struts>

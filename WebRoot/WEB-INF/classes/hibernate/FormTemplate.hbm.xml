@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "file:///D:/程序/java/Hibernate/dtd文件/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kdyzm.domain.FormTemplate" table="formTemplate">
+		<id name="formTemplateId" type="string" length="32">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="name" type="string" length="32"></property>
+		<property name="url" type="string" length="100"></property>
+		<property name="processKey" type="string" length="32"></property>
+		<set name="forms">
+			<key>
+				<column name="formTemplateId"></column>
+			</key>
+			<one-to-many class="com.kdyzm.domain.Form"/>
+		</set>
+	</class>
+</hibernate-mapping>

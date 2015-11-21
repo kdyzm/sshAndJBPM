@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+
+	<property name="dialect">
+		org.hibernate.dialect.MySQL5InnoDBDialect
+	</property>
+	<property name="connection.url">
+		jdbc:mysql://localhost:3306/sshAndJbpm
+	</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">5a6f38</property>
+	<property name="connection.driver_class">
+		com.mysql.jdbc.Driver
+	</property>
+	<property name="myeclipse.connection.profile">mysql</property>
+	<property name="show_sql">true</property>
+	<property name="hbm2ddl.auto">update</property>
+	<!-- 
+		<property name="current_session_context_class">thread</property>
+	-->
+	<mapping resource="jbpm.repository.hbm.xml" />
+	<mapping resource="jbpm.execution.hbm.xml" />
+	<mapping resource="jbpm.history.hbm.xml" />
+	<mapping resource="jbpm.task.hbm.xml" />
+	<mapping resource="jbpm.identity.hbm.xml" />
+	
+	<mapping resource="hibernate/Approve.hbm.xml" />
+	<mapping resource="hibernate/Form.hbm.xml" />
+	<mapping resource="hibernate/FormTemplate.hbm.xml" />
+	<mapping resource="hibernate/Kynamic.hbm.xml" />
+	<mapping resource="hibernate/Post.hbm.xml" />
+	<mapping resource="hibernate/User.hbm.xml" />
+	<mapping resource="hibernate/Version.hbm.xml" />
+</session-factory>
+</hibernate-configuration>

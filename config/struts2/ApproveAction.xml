@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+  <!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+"file:\\\D:\程序\java\struts2\dtd\struts-2.3.dtd">
+<struts>
+	<package extends="struts-default" namespace="/" name="approvePackage">
+		<action name="ApproveAction_*" method="{1}" class="com.kdyzm.struts2.action.ApproveAction">
+			<result name="index">/approvalProcessManagement/index.jsp</result>
+			<result name="addUI">/approvalProcessManagement/addUI.jsp</result>
+			<result name="listAllApprovements">/approveManagement/showAllApprovements.jsp</result>
+			<result name="approveUI">/approveManagement/approveUI.jsp</result>
+		</action>
+	</package>
+	<package name="approveJsonPackage" extends="json-default" namespace="/">
+		<action name="ApproveActionJson_*" method="{1}" class="com.kdyzm.struts2.action.ApproveAction">
+			<result name="ajax" type="json"></result>
+		</action>
+	</package>
+</struts>

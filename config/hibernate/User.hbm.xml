@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "file:///D:/程序/java/Hibernate/dtd文件/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kdyzm.domain.User" table="user">
+		<id name="uid" type="string" length="32">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="password" type="string" length="32"></property>
+		<property name="userName" type="string" length="32"></property>
+		<many-to-one name="post" class="com.kdyzm.domain.Post">
+			<column name="pid"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

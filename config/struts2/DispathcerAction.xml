@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+  <!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+"file:\\\D:\程序\java\struts2\dtd\struts-2.3.dtd">
+<!-- 专门用于转发各个框架中的页面 -->
+<struts>
+	<package name="dispacherPackage" extends="struts-default" namespace="/">
+		<action name="DispatcherAction_*" method="{1}" class="com.kdyzm.struts2.action.DispatcherAction">
+			<result name="left">/left.jsp</result>
+			<result name="right">/right.jsp</result>
+			<result name="top">/top.jsp</result>
+			<result name="login">/login/login.jsp</result>
+		</action>
+	</package>
+</struts>

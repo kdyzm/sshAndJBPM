@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "file:///D:/程序/java/Hibernate/dtd文件/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kdyzm.domain.Kynamic" table="kynamic">
+		<id name="kid" type="string" length="32">
+			<generator class="increment"></generator>
+		</id>
+		<property name="isParent" type="boolean"></property>
+		<property name="name" type="string" length="32"></property>
+		<set name="versions" inverse="true">
+			<key>
+				<column name="kid"></column>
+			</key>
+			<one-to-many class="com.kdyzm.domain.Version"/>
+		</set>
+		<!-- 这里的设置有问题，这是流程的标识id，需要使用外键?? -->
+		<property name="pid" type="string" length="32"></property>
+	</class>
+</hibernate-mapping>

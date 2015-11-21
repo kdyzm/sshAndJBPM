@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "file:///D:/程序/java/Hibernate/dtd文件/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kdyzm.domain.Approve" table="approve">
+		<id name="approveId" length="32" type="string">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="approveDate" length="32" type="string"></property>
+		<property name="approveName" length="32" type="string"></property>
+		<property name="isApprove" length="32" type="string"></property>
+		<many-to-one name="form" class="com.kdyzm.domain.Form">
+			<column name="fid"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

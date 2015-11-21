@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "file:///D:/程序/java/Hibernate/dtd文件/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.kdyzm.domain.Form" table="form">
+		<id name="fid" length="32" type="string">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="processId" type="string" length="100"></property>
+		<property name="name" type="string" length="100"></property>
+		<property name="state" type="string" length="200"></property>
+		<property name="url" type="string" length="200"></property>
+		<property name="applicator" type="string" length="32"></property>
+		<property name="date" type="string" length="32"></property>
+		<property name="title" type="string" length="32"></property>
+		<many-to-one name="formTemplate" class="com.kdyzm.domain.FormTemplate">
+			<column name="formTemplateId"></column>
+		</many-to-one>
+		<set name="approves" cascade="save-update" inverse="true">
+			<key>
+				<column name="fid"></column>
+			</key>
+			<one-to-many class="com.kdyzm.domain.Approve"/>
+		</set>
+	</class>
+</hibernate-mapping>

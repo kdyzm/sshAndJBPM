@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+  <!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+"file:\\\D:\程序\java\struts2\dtd\struts-2.3.dtd">
+<struts>
+	<include file="struts2/DispathcerAction.xml"></include>
+<include file="struts2/ApproveAction.xml"></include><include file="struts2/PDManagementAction.xml"></include><include file="struts2/FormTemplateAction.xml"></include><include file="struts2/FormAciont.xml"></include><include file="struts2/UserAction.xml"></include></struts>

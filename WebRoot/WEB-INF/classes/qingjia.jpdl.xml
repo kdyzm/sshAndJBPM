@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process name="qingjia" xmlns="http://jbpm.org/4.4/jpdl">
+   <start g="405,59,48,48" name="start1">
+      <transition g="-45,-22" name="to 申请" to="申请"/>
+   </start>
+   <end g="403,572,48,48" name="end1"/>
+   <task assignee="#{shenqingren}" g="383,136,92,52" name="申请">
+      <transition name="to fork1" to="fork1" g="-52,-22"/>
+   </task>
+   <task assignee="张三" g="220,247,92,52" name="项目组长审批">
+      <transition name="to join1" to="join1" g="-49,-22"/>
+   </task>
+   <task assignee="李四" g="550,224,112,76" name="项目副组长审批">
+      <transition name="to join1" to="join1" g="-49,-22"/>
+   </task>
+   <task assignee="王五" g="385,392,92,52" name="总经理审批">
+      <transition g="-69,-22" name="to 总裁审批" to="总裁审批"/>
+   </task>
+   <task assignee="赵六" g="388,493,92,52" name="总裁审批">
+      <transition g="-50,-22" name="to end1" to="end1"/>
+   </task>
+   <fork name="fork1" g="407,207,48,48">
+      <transition name="to 项目组长审批" to="项目组长审批" g="-93,-22"/>
+      <transition name="to 项目副组长审批" to="项目副组长审批" g="-105,-22"/>
+   </fork>
+   <join name="join1" g="417,314,48,48">
+      <transition name="to 总经理审批" to="总经理审批" g="-81,-22"/>
+   </join>
+</process>

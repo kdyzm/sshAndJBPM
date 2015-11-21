@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+  <!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+"file:\\\D:\程序\java\struts2\dtd\struts-2.3.dtd">
+<struts>
+	<package name="formPackage" extends="struts-default" namespace="/">
+		<action name="FormAction_*" method="{1}" class="com.kdyzm.struts2.action.FormAction">
+			<result name="showApplicationUI">/applicate/applicationUI.jsp</result>
+			<result name="toShowAllFormTemplatesUI" type="redirectAction">
+				<param name="actionName">FormTemplateAction_showAllFormTemplate.action</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="listAllApplication">/applicate/listAllApplications.jsp</result>
+			<result name="toListAllApplicationAction" type="redirectAction">FormAction_listAllApplication.action</result>
+			<!-- 显示图片信息的节点 -->
+			<result name="showImageUI">/applicate/showActivityImage.jsp</result>
+			<result name="stream" type="stream"></result>
+		</action>
+		
+		
+	</package>
+	<package name="formJsonPackage" extends="json-default" namespace="/">
+		<action name="FormActionJson_*" class="com.kdyzm.struts2.action.FormAction" method="{1}">
+			<result name="ajax" type="json"></result>
+		</action>
+	</package>
+</struts>
